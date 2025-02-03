@@ -9,6 +9,24 @@
         .form-check { margin: 5px 0; }
         .tombol { padding: 5px 10px; margin: 5px; cursor: pointer; }
         #lblTime1, #lblTime2 { font-weight: bold; }
+        .question-indicators {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .question-indicator {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +49,9 @@
                     Answered: <span id="lblSoalSudah">20</span>/<span id="lblJumlahSoal">80</span>
                 </div>
             </div>
+
+            <!-- Question indicators -->
+            <div class="question-indicators" id="question-indicators"></div>
 
             <div class="card">
                 <div class="question-section">
@@ -109,6 +130,27 @@
 
             // Reset radio buttons
             document.querySelectorAll('[name="pilih"]').forEach(r => r.checked = false);
+
+            // Update the active indicator
+            updateIndicators();
+        }
+
+        function updateIndicators() {
+            const indicatorsContainer = document.getElementById('question-indicators');
+            indicatorsContainer.innerHTML = ''; // Clear existing indicators
+            questions.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.classList.add('question-indicator');
+                indicator.textContent = index + 1;
+                if (index === currentQuestion) {
+                    indicator.classList.add('active');
+                }
+                indicator.addEventListener('click', () => {
+                    currentQuestion = index;
+                    loadQuestion();
+                });
+                indicatorsContainer.appendChild(indicator);
+            });
         }
 
         document.getElementById('lnkNext').addEventListener('click', () => {
