@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Soal 1 - Ujian Universitas Gunadarma</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; padding: 20px; }
+        .container { background: white; width: 50%; margin: auto; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        .question-number { font-size: 18px; color: gray; margin-bottom: 10px; }
+        .card { text-align: left; border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; }
+        .btn { padding: 10px 15px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px; }
+        .btn:hover { background: #45a049; }
+        .indicator-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; }
+        .indicator { width: 30px; height: 30px; border-radius: 50%; background: #ddd; text-align: center; line-height: 30px; font-weight: bold; }
+        .active { background: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="indicator-container">
+            <div class="indicator active">1</div>
+            <div class="indicator">2</div>
+            <div class="indicator">3</div>
+        </div>
+        <p class="question-number">Soal 1 dari 3</p>
+        <h2>Soal 1</h2>
+        <div class="card">
+            <p>Untuk melakukan penelitian, hal pertama kali yang harus dilakukan adalah menemukan dan mengembangkan ide yang ada. Ide berasal dari dua hal yaitu...</p>
+            <form>
+                <input type="radio" name="answer" id="optionA"> <label for="optionA">Rasa ingin tahu dan pengamatan</label><br>
+                <input type="radio" name="answer" id="optionB"> <label for="optionB">Pengamatan dan observasi</label><br>
+                <input type="radio" name="answer" id="optionC"> <label for="optionC">Membaca dan bertanya</label><br>
+                <input type="radio" name="answer" id="optionD"> <label for="optionD">Diskusi dan observasi</label><br>
+            </form>
+        </div>
+        <a href="../index.html" class="btn">Kembali</a>
+        <a href="question2.html" class="btn">Selanjutnya</a>
+    </div>
+</body>
+</html>
